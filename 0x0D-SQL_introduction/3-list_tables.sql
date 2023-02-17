@@ -1,3 +1,6 @@
 -- This script lists all the tables in msql database
-USE msql;
-SHOW TABLES;
+dbname="$msql"
+-- Build the MySQL command to list tables
+mysql_cmd="USE ${dbname}; SHOW TABLES;"
+-- Run the MySQL command and display the results
+mysql -e "${mysql_cmd}"
