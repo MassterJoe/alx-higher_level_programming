@@ -1,0 +1,13 @@
+#!/usr/bin/node
+const process = require('process');
+let count = 0;
+for (const i in process.argv) {
+  count = count + 1;
+}
+if (count < 3) {
+  console.log('No argument');
+} else if (count === 3) {
+  console.log(process.argv[2]);
+} else {
+  console.log(process.argv[2]);
+}
