@@ -1,0 +1,11 @@
+#!/usr/bin/node
+const process = require('process');
+const argv = process.argv;
+for (let i = 0; i < parseInt(argv[2]); i++) {
+    if (argv[2] && parseInt(argv[2])) {
+	let x = "C is fun";
+	console.log(x);
+}   else {
+      console.log('Missing number of occurrences');
+}
+}
