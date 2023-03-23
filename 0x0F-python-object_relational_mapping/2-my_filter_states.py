@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+""" documebtation later """
 import MySQLdb
 import sys
-if __name__=="__main__": # will not exceute when imported
+if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost",
                          port=3306,
                          user=sys.argv[1],
