@@ -26,3 +26,6 @@ class TestBase_instantiation(unittest.TestCase):
         b2 = Base()
         self.assertEqual(b1.id, b2.id - 1)
 
+    def test_uniqie_id(self):
+        self.assertEqual(89, Base(89).id)
+
