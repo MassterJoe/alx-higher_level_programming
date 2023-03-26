@@ -1,0 +1,74 @@
+#!/usr/bin/python3
+"""Class square that inherits from Rectangle"""
+from models.rectangle import Rectangle
+
+
+class Square(Rectangle):
+    """A square is a rectangle with the same width and height"""
+
+    def __init__(self, size, x=0, y=0, id=None):
+        """Initialize the square attribute: same with that
+        of rectangle except that we now use size (int)"""
+        super().__init__(size, size, x, y, id)
+
+    @property
+    def size(self):
+        """get/set the size of the square"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
+
+    def __str__(self):
+        return ("[Square] ({}) {}/{} - {}"
+                .format(self.id, self.x, self.y, self.size))
+
+    def update(self, *args, **kwargs):
+        """update the square
+        args:
+            *args (int): new attribute value
+            - 1st argument is id
+            - 2nd argument is size
+            - 3rd argument is x
+            - 4th argument is y
+        """
+        a = 0
+        if args and len(args) != 0:
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+
+    def to_dictionary(self):
+        """This function returns a dictionary representation
+        of a Rectangle object """
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
