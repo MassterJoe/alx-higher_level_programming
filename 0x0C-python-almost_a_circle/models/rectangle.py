@@ -85,13 +85,16 @@ class Rectangle(Base):
         for y in range(self.y):
             print("")
         for i in range(self.height):
-            k = " "
+            k = ""
             for x in range(self.x):
                 k = k + " "
             m = ""
             for j in range(self.width):
                 m = m + "#"
-            print(k, m)
+            if not self.x and not self.y:
+                print(m)
+            else:
+                print(k, m)
 
     def __str__(self):
         """returns the __str__ representation"""
