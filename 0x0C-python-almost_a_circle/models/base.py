@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Defines a base model class.
+"""
+
 
 class Base:
     __nb_objects = 0
