@@ -3,7 +3,20 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """ Represents a rectangle """
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize a new Rectangle.
+        Args:
+            width (int): The width of the new rectangle
+            height (int): The height of the new rectangle
+            x and y: x cordinate and y cordinate of the
+            new rectangle respectively
+        Raises:
+            TypeError: If the width, height, x or y is not an int
+            ValueError: if the width or height <= 0
+                        if x or y < 0
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -12,6 +25,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Set/get the width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -24,6 +38,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Set/get the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -36,6 +51,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Set/get the x coordinate of the rectangle"""
         return self.__x
 
     @x.setter
@@ -48,6 +64,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Set/get the y coordinate of the rectangle"""
         return self.__y
 
     @y.setter
@@ -59,9 +76,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ It returns the area of the rectangle"""
         return self.width * self.height
 
     def display(self):
+        """print the rectangle using the # character """
         for y in range(self.y):
             print("")
         for i in range(self.height):
@@ -74,10 +93,20 @@ class Rectangle(Base):
             print(k, m)
 
     def __str__(self):
+        """returns the __str__ representation"""
         return ("[Rectangle] ({}) {}/{} - {}/{}"
                 .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """update the rectangle
+        args:
+            *args (int): new attribute value
+            - 1st argument is id
+            - 2nd argument is width
+            - 3rd argument is height
+            - 4th argument is x
+            - 5th argument is y
+        """
         a = 0
         if args and len(args) != 0:
             for arg in args:
