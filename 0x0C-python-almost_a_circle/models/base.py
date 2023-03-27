@@ -57,7 +57,7 @@ class Base:
                 jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
-    def from_json_to_string(json_string):
+    def from_json_string(json_string):
         """
         It returns a json string representation of a list
         of dicionaries
