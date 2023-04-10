@@ -1,0 +1,4 @@
+#!/bin/bash
+# This bash script take in a Url and sends a POST request
+#and displays the body of the response
+curl -sX POST
