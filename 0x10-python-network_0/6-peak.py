@@ -14,3 +14,4 @@ def find_peak(list_of_integers):
             list_of_integers[i], list_of_integers[i-1] = (
                 list_of_integers[i-1], list_of_integers[i])
         peak = list_of_integers[i]
+    return peak
