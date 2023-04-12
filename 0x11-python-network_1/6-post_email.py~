@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+"""
+A python script that takes is a url and
+email address, sends a POST request to the passed URL
+with the e-mail as the parameter and finally displays
+the body
+"""
+
+if __name__ == "__main__":
+    import sys
+    import requests
+
+    url = sys.argv[1]
+    email = sys.argv[2]
+    data = {'email': email}
+    r= requests.post(url, data)
+    response = r.text
+    print(response)
