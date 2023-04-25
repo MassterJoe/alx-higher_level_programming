@@ -1,0 +1,11 @@
+#!/usr/bin/node
+const request = require('require');
+const apiURL = process.argv[2];
+request(apiURL, (err, res, body) => {
+    if (err) {
+	console.error(err);
+	return;
+    }
+    const films = JSON.parse(body).results;
+  
+})
